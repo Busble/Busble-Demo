@@ -10,7 +10,7 @@
           <div class="tagline wrap">Design better. Faster. And get beautiful results forever.</div>
         </div>
         <div class="call-to-action">
-          <div class="button primary">สมัครสิหรรรรรรรม</div>
+          <router-link to="/register" class="button primary"><div @click="count">สมัครสิหรรรรรรรม</div></router-link>
           <div class="button">สุบอลลล</div>
         </div>
         <div class="img2">
@@ -31,6 +31,24 @@
 
 <script>
 export default {
+  name: 'hellowold',
+  data () {
+    return {
+      incre: 1
+    }
+  },
+  methods: {
+    count() {
+      // let now = new Date()
+      // const bookListRef = Firebase.database().ref('/book')
+      // let newBookRef = bookListRef.push()
+      // newBookRef.set({
+      //   count: this.incre++,
+      //   create_date: 'test'
+      // })
+      console.log('click')
+    }
+  }
 }
 </script>
 

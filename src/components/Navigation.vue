@@ -10,7 +10,7 @@
         </div>
         <div class="right">
           <div class="nav-desktop">
-            <a href="#" class="active">Home</a>
+            <router-link to="/" class="active">Home</router-link>
             <a href="#">Pricing</a>
             <a href="#">Blog</a>
             <a href="#">Help</a>
