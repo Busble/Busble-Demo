@@ -25,18 +25,6 @@
 
 <script>
 export default {
-  methods: {
-        handleScroll: function () {
-            this.console.log("sdfsa");
-        }
-    },
-
-    created: function () {
-        window.addEventListener('scroll', this.handleScroll);
-    },
-    destroyed: function () {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
 }
 </script>
 
