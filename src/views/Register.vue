@@ -16,7 +16,8 @@
   </div>
 </template>
 <script>
-const firebase = require('firebase')
+
+import firebase from 'firebase'
 
 const config = {
   apiKey: "AIzaSyBwwtOj08xrVVhT5yhUHacor8Tn292jq-Q",
