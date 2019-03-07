@@ -4,16 +4,15 @@
       <div class="container">
         <div class="left">
           <div class="logo">
-            <div class="img"></div>
-            <div class="text">Busble</div>
+            <div class="img"><img src="./../assets/img/logo.png" alt="" /></div>
+            <router-link to="/" class="text">Project Busble</router-link>
           </div>
         </div>
         <div class="right">
           <div class="nav-desktop">
             <router-link to="/" class="active">Home</router-link>
-            <a href="#">Pricing</a>
-            <a href="#">Blog</a>
-            <a href="#">Help</a>
+            <a href="#">Creator program</a>
+            <a href="#">Feedback</a>
           </div>
           <div class="button"></div>
         </div>
@@ -40,6 +39,7 @@ export default {
     left: 0;
     max-width: 1440px;
     margin: auto;
+    border-bottom: 1px solid #f4f5fb;
     background-color: #fff;
     z-index: 5000;
     .container {
@@ -55,6 +55,10 @@ export default {
             width: 60px;
             height: 60px;
             background-color: #0469B9;
+            img {
+              widows: 100%;
+              height: 100%;
+            }
           }
           .text {
             display: inline-block;
