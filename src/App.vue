@@ -1,20 +1,14 @@
 <template>
   <div id="app">
     <Navigation/>
-    <HelloWorld/>
+    <router-view/>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Navigation from './components/Navigation.vue'
-
+import Navigation from '@/components/Navigation.vue'
 export default {
   name: 'app',
-  components: {
-    HelloWorld,
-    Navigation
-  }
+  components: { Navigation }
 }
 </script>
 
