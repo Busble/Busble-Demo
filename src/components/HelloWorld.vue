@@ -6,23 +6,23 @@
             <img class="bg" src="./../assets/img/home/header/header-bg.svg" alt="" />
         </div>
         <div class="header-content">
-          <div class="title wrap">ผู้คนมากมาย รอชื่นชมผลงานของคุณอยู่.</div>
-          <div class="tagline wrap">Design better. Faster. And get beautiful results forever.</div>
+          <div class="title wrap">ทุกเรื่องราวของคุณมีความหมาย</div>
+          <div class="tagline wrap">แบ่งปันความคิดสร้างสรรค์ในแบบของคุณ พร้อมรายได้ไม่มีสิ้นสุด</div>
         </div>
         <div class="call-to-action">
-          <div class="button primary">สมัครสิหรรรรรรรม</div>
-          <div class="button">สุบอลลล</div>
+          <div class="button primary">สมัครใช้งานฟรี</div>
+          <div class="button">ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
         </div>
         <div class="img2">
-            <img src="./../assets/img/home/header/header-mockups.png" alt="" />
+            <img src="./../assets/img/home/header/Header-Mockup.svg" alt="" />
         </div>
       </div>
     </header>
     <div class="section-02">
-      <img class="top" src="" alt="" />
+      <img class="top" src="./../assets/img/home/section/section02-top.svg" alt="" />
       <div class="content">
       </div>
-      <img class="bottom" src={section02Bottom} alt="" />
+      <img class="bottom" src="./../assets/img/home/section/section02-bottom.svg" alt="" />
     </div>
     <div class="section-03"></div>
     <div class="footer"></div>
@@ -61,7 +61,7 @@ export default {
         position: relative;
         width: 100%;
         height: auto;
-        padding: 60px 0 0 0;
+        padding: 80px 0 0 0;
         z-index: 1000;
         .title {
             position: relative;
@@ -75,7 +75,7 @@ export default {
         .tagline {
             position: relative;
             font-size: 20px;
-            margin-top: 10px;
+            margin-top: 15px;
             margin-bottom: 10px;
             padding-left: 20px;
             padding-right: 20px;
