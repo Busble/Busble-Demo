@@ -14,7 +14,7 @@
           <div class="button">ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
         </div>
         <div class="img2">
-            <img src="./../assets/img/home/header/Header-Mockup.svg" alt="" />
+            <img src="./../assets/img/home/header/header_mockup.png" alt="" />
         </div>
       </div>
     </header>
