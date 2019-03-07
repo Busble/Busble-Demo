@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import VueAnalytics from 'vue-analytics'
 import store from './store'
+import VeeValidate from 'vee-validate'
 
 Vue.config.productionTip = false
 
@@ -19,6 +20,8 @@ Vue.use(VueAnalytics, {
     sendHitTask: isProduction
   }
 })
+
+Vue.use(VeeValidate)
 
 new Vue({
   router,

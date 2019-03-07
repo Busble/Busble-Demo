@@ -2,13 +2,14 @@
   <div class="app-container">
     <div class="resgiter-form">
       <div class="resgiter-form--dialog">
-        <div class="header">
-          <h1>สมัครสิ่</h1>
+        <div class="resgiter-form--header">
+          <h1>Contact</h1>
         </div>
-        <div class="content">
+        <div class="resgiter-form--input">
           <form @submit.prevent="submit">
-            <input type="text" v-model="text_email">
-            <button type="submit">submit</button>
+            <input v-validate="'email'" data-vv-delay="500" name="email" type="text" v-model="text_email">
+            <button class="submit-button" type="submit" :class="{'disable-button': errors.first('email')}" :disabled="errors.first('email')">submit</button>
+            <p :class="{error: errors.first('email')}" v-if="errors.first('email')"><span>please insert email only</span></p>
           </form>
         </div>
       </div>
@@ -18,6 +19,7 @@
 <script>
 
 import firebase from 'firebase'
+import 'firebase/database'
 
 const config = {
   apiKey: "AIzaSyBwwtOj08xrVVhT5yhUHacor8Tn292jq-Q",
@@ -39,10 +41,17 @@ export default {
   },
   methods: {
     submit() {
-      const userListRef = firebase.database().ref('/user')
-      let newUserRef = userListRef.push()
-      newUserRef.set({
-        email: this.text_email
+      this.$validator.validateAll().then((passed) => {
+        if (passed) {
+          const userListRef = firebase.database().ref('/user')
+          let newUserRef = userListRef.push()
+          newUserRef.set({
+            email: this.text_email
+          })
+          alert('registered')
+          this.text_email = ''
+          return
+        }
       })
     }
   }
@@ -52,26 +61,40 @@ export default {
 <style lang="scss" scoped>
   .resgiter-form {
     display: block;
-    margin: 0 auto;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
     &--dialog {
       display: grid;
+      padding: 1rem;
       grid-template-rows: 25% 75%;
-      width: 500px;
-      height: 180px;
-      border-radius: 4px;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-      .header {
+      width: 86vw;
+      @media (min-width: 768px) {
+        max-width: 500px;
+      }
+      height: 200px;
+      border-radius: 14px;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.2);
+      .resgiter-form--header {
         h1 {
           margin: 0;
           padding: 1rem;
           text-align: center;
         }
       }
-      .content {
+      .resgiter-form--input {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 1rem;
+        .disable-button {
+          cursor: not-allowed;
+        }
+        .error {
+          span {
+            color: red;
+          }
+        }
       }
     }
   }
