@@ -16,6 +16,18 @@
   </div>
 </template>
 <script>
+const firebase = require('firebase')
+
+const config = {
+  apiKey: "AIzaSyBwwtOj08xrVVhT5yhUHacor8Tn292jq-Q",
+  authDomain: "busble.firebaseapp.com",
+  databaseURL: "https://busble.firebaseio.com",
+  projectId: "busble",
+  storageBucket: "busble.appspot.com",
+  messagingSenderId: "914645978067"
+}
+
+firebase.initializeApp(config)
 
 export default {
   name: 'register',
@@ -26,23 +38,17 @@ export default {
   },
   methods: {
     submit() {
-      const userListRef = Firebase.database().ref('/user')
+      const userListRef = firebase.database().ref('/user')
       let newUserRef = userListRef.push()
       newUserRef.set({
         email: this.text_email
-      }, function(error) {
-        if (error) {
-          // The write failed...
-        } else {
-            console.log('Data saved successfully!')
-        }
       })
     }
   }
 }
 </script>
 
-<style <style lang="scss" scoped>
+<style lang="scss" scoped>
   .resgiter-form {
     display: block;
     margin: 0 auto;
