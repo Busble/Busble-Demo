@@ -3,13 +3,13 @@
     <div class="resgiter-form">
       <div class="resgiter-form--dialog">
         <div class="resgiter-form--header">
-          <h1>Contact</h1>
+          <h1>สมัครสามาชิก</h1>
         </div>
         <div class="resgiter-form--input">
           <form @submit.prevent="submit">
-            <input v-validate="'email'" data-vv-delay="500" name="email" type="text" v-model="text_email">
+            <input v-validate="'required|email'" data-vv-delay="500" name="email" type="text" v-model="text_email">
+            <p :class="{error: errors.first('email') || submit_null}" v-if="errors.first('email') || submit_null">* กรุณาใส่เฉพาะอีเมลเท่านั้น</p>
             <button class="submit-button" type="submit" :class="{'disable-button': errors.first('email')}" :disabled="errors.first('email')">submit</button>
-            <p :class="{error: errors.first('email')}" v-if="errors.first('email')"><span>please insert email only</span></p>
           </form>
         </div>
       </div>
@@ -36,7 +36,8 @@ export default {
   name: 'register',
   data () {
     return {
-      text_email: ''
+      text_email: '',
+      submit_null: false
     }
   },
   methods: {
@@ -80,6 +81,10 @@ export default {
           margin: 0;
           padding: 1rem;
           text-align: center;
+          color: #3d4047;
+          font-size: 18px;
+          font-weight: lighter;
+          letter-spacing: 1px;
         }
       }
       .resgiter-form--input {
@@ -87,13 +92,30 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 1rem;
+        text-align: center;
+        input[type=text] {
+          display: block;
+          border-radius: 4px;
+          padding: 0.5rem 0.9rem;
+          border: 1px solid #ccc;
+          outline: none;
+        }
+        .submit-button {
+          margin-top: 20px;
+          border: none;
+          border-radius: 4px;
+          padding: 0.5rem 0.9rem;
+          box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
         .disable-button {
           cursor: not-allowed;
         }
         .error {
-          span {
-            color: red;
-          }
+          font-size: 12px;
+          margin: 4px 0 0 0;
+          text-align: left;
+          color: red;
         }
       }
     }
