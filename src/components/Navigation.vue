@@ -5,7 +5,7 @@
         <div class="left">
           <div class="logo">
             <div class="img"><img src="./../assets/img/logo.png" alt="" /></div>
-            <div class="text">Project Busble</div>
+            <router-link to="/" class="text">Project Busble</router-link>
           </div>
         </div>
         <div class="right">
