@@ -20,9 +20,32 @@
         </div>
       </div>
     </header>
-    <div class="section-02">
+    <div class="section-format">
       <img class="top" src="./../assets/img/home/section/section02-top.svg" alt>
-      <div class="content"></div>
+      <div class="content">
+        <div class="title wrap">อิสระที่คุณเลือกได้</div>
+        <div class="tagline wrap">คุณสามารถนำผลงานของคุณมาแบ่งปันหรือขาย จากที่ไหนเมื่อไหร่ก็ได้</div>
+        <div class="format">
+          <div class="item">
+            <div class="image">
+              <img src="./../assets/img/home/section/format/image-outline.svg" alt>
+            </div>
+            <div class="title">ภาพถ่าย</div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="./../assets/img/home/section/format/pantone-outline.svg" alt>
+              <div class="title">ภาพกราฟฟิก</div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="./../assets/img/home/section/format/film-outline.svg" alt>
+              <div class="title">วิดีโอ</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <img class="bottom" src="./../assets/img/home/section/section02-bottom.svg" alt>
     </div>
     <div class="section-03"></div>
@@ -145,7 +168,7 @@ header {
     }
   }
 }
-.section-02 {
+.section-format {
   height: auto;
   background-color: #fafafc;
   .top {
@@ -155,7 +178,56 @@ header {
     margin-bottom: -6px;
   }
   .content {
-    height: 400px;
+    text-align: center;
+    height: auto;
+    padding: 80px 20px;
+    .title {
+      position: relative;
+      font-size: 35px;
+      line-height: 45px;
+      font-weight: bold;
+      margin: 10px auto;
+      padding: 0 20px;
+      color: #333333;
+    }
+    .tagline {
+      position: relative;
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #7b868a;
+    }
+    .format {
+      padding-top: 30px;
+      .item {
+        display: inline-block;
+        text-align: center;
+        width: 280px;
+        height: auto;
+        margin: 10px;
+        padding: 20px;
+        .image {
+          width: 120px;
+          height: auto;
+          margin: auto;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .title {
+          position: relative;
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: bold;
+          margin: 0 auto;
+          padding: 0;
+          color: #333333;
+        }
+      }
+    }
   }
 }
 .section-03 {
