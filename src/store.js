@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import { analyticsMiddleware } from 'vue-analytics'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -20,7 +21,12 @@ export default new Vuex.Store({
             ['event', {
               eventCategory: 'register',
               eventAction: 'booking',
-              eventValue: state.counter + 1
+              eventLabel: 'user-register'
+            }],
+            ['event', {
+              eventCategory: 'register-userAgent',
+              eventAction: 'userAgent',
+              eventLabel: 'ios'
             }]
           ]
         }

@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "firebase": "^5.8.5",
+    "ua-parser-js": "^0.7.19",
     "vee-validate": "^2.1.7",
     "vue": "^2.6.6",
     "vue-analytics": "^5.16.2",

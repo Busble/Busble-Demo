@@ -10,8 +10,8 @@
         </div>
         <div class="right">
           <div class="nav-desktop">
-            <router-link to="/" class="active">Home</router-link>
-            <a href="#">Creator program</a>
+            <router-link to="/" exact-active-class="active">Home</router-link>
+            <router-link to="/creative" exact-active-class="active"><div>Creator program</div></router-link>
             <a href="#">Feedback</a>
           </div>
           <div class="button"></div>
@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  name: 'navigation'
 }
 </script>
 
