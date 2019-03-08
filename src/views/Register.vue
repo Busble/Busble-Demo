@@ -8,35 +8,50 @@
       <div class="tagline wrap">กรุณาลงชื่ออีเมล์ของคุณไว้ หาก Busble พร้อมใช้งานเมื่อไหร่ เราจะรีบแจ้งให้คุณทราบในทันที</div>
     </div>
     <form @submit.prevent="submit">
-      <input type="text" v-model="text_email">
-      <button type="submit" class="button primary">ลงทะเบียน</button>
+      <div :class="{error: errors.first('email') || submit_null}" v-if="errors.first('email') || submit_null">* กรุณาใส่เฉพาะอีเมลเท่านั้น</div>
+      <input v-validate="'required|email'" :class="{'error-input': errors.first('email')}" placeholder="อีเมลล์ของคุณ" data-vv-delay="500" name="email" type="text" v-model="text_email">
+      <button class="button primary" type="submit" :class="{'disable-button': errors.first('email')}" :disabled="errors.first('email')">submit</button>
     </form>
   </div>
 </template>
 <script>
+
+import firebase from 'firebase'
+import 'firebase/database'
+
+const config = {
+  apiKey: "AIzaSyBwwtOj08xrVVhT5yhUHacor8Tn292jq-Q",
+  authDomain: "busble.firebaseapp.com",
+  databaseURL: "https://busble.firebaseio.com",
+  projectId: "busble",
+  storageBucket: "busble.appspot.com",
+  messagingSenderId: "914645978067"
+}
+
+firebase.initializeApp(config)
+
 export default {
   name: "register",
   data() {
     return {
-      text_email: ""
-    };
+      text_email: '',
+      submit_null: false
+    }
   },
   methods: {
     submit() {
-      const userListRef = Firebase.database().ref("/user");
-      let newUserRef = userListRef.push();
-      newUserRef.set(
-        {
-          email: this.text_email
-        },
-        function(error) {
-          if (error) {
-            // The write failed...
-          } else {
-            console.log("Data saved successfully!");
-          }
+      this.$validator.validateAll().then((passed) => {
+        if (passed) {
+          const userListRef = firebase.database().ref('/user')
+          let newUserRef = userListRef.push()
+          newUserRef.set({
+            email: this.text_email
+          })
+          alert('registered')
+          this.text_email = ''
+          return
         }
-      );
+      });
     }
   }
 };
@@ -84,19 +99,33 @@ export default {
   form {
     margin-top: 20px;
     margin-bottom: 80px;
+    .error {
+      text-align: left;
+      margin-left: auto;
+      max-width: 500px;
+      margin-right: auto;
+      padding: 0 15px 0 15px;
+      color: red;
+
+    }
+    .error-input {
+      border: 1px solid red;
+    }
     input {
       width: 100%;
       max-width: 350px;
       font-size: 18px;
-      font-weight: bold;
       padding: 12px 24px;
-      margin: 10px;
+      margin: 10px 0;
       border: 1px solid #E8EFF6;
       border-radius: 3px;
       color: #333;
       background-color: #fff;
       transition: all 0.2s ease;
       //box-shadow: 0 5px 15px rgba(32, 43, 54, 0.05);
+      &::placeholder {
+        color:rgba(51, 51, 51, 0.527);
+      }
     }
     .button {
       cursor: pointer;
@@ -123,4 +152,3 @@ export default {
   }
 }
 </style>
-

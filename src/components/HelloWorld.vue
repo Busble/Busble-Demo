@@ -13,7 +13,7 @@
         </div>
         <div class="call-to-action">
           <router-link to="/register" class="button primary">
-            <div @click="count">สมัครใช้งานฟรี</div>
+            <div @click="trackBooking">สมัครใช้งานฟรี</div>
           </router-link>
           <div class="button">ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
         </div>
@@ -69,24 +69,23 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: "hellowold",
   data() {
     return {
-      incre: 1
-    };
+      // 
+    }
+  },
+  computed: {
+    ...mapGetters([
+      'counter'
+    ])
   },
   methods: {
-    count() {
-      // let now = new Date()
-      // const bookListRef = Firebase.database().ref('/book')
-      // let newBookRef = bookListRef.push()
-      // newBookRef.set({
-      //   count: this.incre++,
-      //   create_date: 'test'
-      // })
-      console.log("click");
-    }
+    ...mapActions([
+      'trackBooking'
+    ])
   }
 };
 </script>
