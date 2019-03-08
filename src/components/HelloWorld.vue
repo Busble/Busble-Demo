@@ -7,13 +7,22 @@
         </div>
         <div class="header-content">
           <div class="title wrap">ทุกเรื่องราวของคุณมีความหมาย</div>
-          <div class="tagline wrap">แบ่งปันความคิดสร้างสรรค์ในแบบของคุณ พร้อมรายได้ไม่มีสิ้นสุด</div>
+          <div
+            class="tagline wrap"
+          >แบ่งปันผลงานสร้างสรรค์ในแบบของคุณ พร้อมสร้างรายได้แบบไม่มีสิ้นสุด</div>
         </div>
         <div class="call-to-action">
           <router-link to="/register" class="button primary">
             <div @click="trackBooking">สมัครใช้งานฟรี</div>
           </router-link>
           <div class="button">ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
+        </div>
+        <div class="content__wrapper">
+          <div class="ellipses-container">
+            <div class="ellipses ellipses__outer--thin"></div>
+
+            <div class="ellipses ellipses__outer--thick"></div>
+          </div>
         </div>
         <div class="img2">
           <img src="./../assets/img/home/header/header_mockup.png" alt>
@@ -22,27 +31,33 @@
     </header>
     <div class="section-format">
       <img class="top" src="./../assets/img/home/section/section02-top.svg" alt>
+      <div class="company">
+        <img class="" src="./../assets/img/home/section/format/microsoft-logo.svg" alt>
+        <img class="" src="./../assets/img/home/section/format/hubspot-logo.svg" alt>
+      </div>
       <div class="content">
-        <div class="title wrap">อิสระที่คุณเลือกได้</div>
-        <div class="tagline wrap">คุณสามารถนำผลงานของคุณมาแบ่งปันหรือขาย จากที่ไหนเมื่อไหร่ก็ได้</div>
+        <div class="title wrap">พื้นที่สำหรับซื้อขายและแบ่งปันผลงาน</div>
+        <div
+          class="tagline wrap"
+        >คุณสามารถนำผลงานของคุณมาแบ่งปันให้กับผู้คน นอกจากนี้คุณยังสามารถขายผลงานชิ้นโปรดเพื่อสร้างรายได้ให้กับคุณ ได้ทุกที่ ทุกเวลา</div>
         <div class="format">
           <div class="item">
             <div class="image">
-              <img src="./../assets/img/home/section/format/image-outline.svg" alt>
+              <img src="./../assets/img/home/section/format/photo.svg" alt>
             </div>
             <div class="title">ภาพถ่าย</div>
           </div>
           <div class="item">
             <div class="image">
-              <img src="./../assets/img/home/section/format/pantone-outline.svg" alt>
-              <div class="title">ภาพกราฟฟิก</div>
+              <img src="./../assets/img/home/section/format/vector.svg" alt>
             </div>
+            <div class="title">ภาพกราฟฟิก</div>
           </div>
           <div class="item">
             <div class="image">
-              <img src="./../assets/img/home/section/format/film-outline.svg" alt>
-              <div class="title">วิดีโอ</div>
+              <img src="./../assets/img/home/section/format/video.svg" alt>
             </div>
+            <div class="title">วิดีโอ</div>
           </div>
         </div>
       </div>
@@ -116,6 +131,7 @@ header {
     .tagline {
       position: relative;
       font-size: 20px;
+      line-height: 25px;
       margin-top: 15px;
       margin-bottom: 10px;
       padding-left: 20px;
@@ -151,9 +167,9 @@ header {
   }
   .img2 {
     -webkit-animation: SlideUp 1s;
-    -moz-animation:    SlideUp 1s;
-    -o-animation:      SlideUp 1s;
-    animation:         SlideUp 1s;
+    -moz-animation: SlideUp 1s;
+    -o-animation: SlideUp 1s;
+    animation: SlideUp 1s;
     position: relative;
     width: 100%;
     max-width: 1080px;
@@ -168,6 +184,7 @@ header {
   }
 }
 .section-format {
+  position: relative;
   height: auto;
   background-color: #fafafc;
   .top {
@@ -175,6 +192,20 @@ header {
   }
   .bottom {
     margin-bottom: -6px;
+  }
+  .company {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    img {
+      width: auto;
+      height: 30px;
+      margin: auto;
+      padding: 0 15px;
+    }
   }
   .content {
     text-align: center;
@@ -191,6 +222,7 @@ header {
     }
     .tagline {
       position: relative;
+      line-height: 25px;
       font-size: 20px;
       margin-top: 15px;
       margin-bottom: 10px;
@@ -208,7 +240,7 @@ header {
         margin: 10px;
         padding: 20px;
         .image {
-          width: 120px;
+          width: 220px;
           height: auto;
           margin: auto;
           img {
@@ -217,11 +249,10 @@ header {
           }
         }
         .title {
-          position: relative;
           font-size: 20px;
           line-height: 30px;
           font-weight: bold;
-          margin: 0 auto;
+          margin: 20px auto 0;
           padding: 0;
           color: #333333;
         }
@@ -275,6 +306,135 @@ header {
   100% {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+$tiber: #09383e;
+$elephant: #0c383e;
+$white: #fff;
+.content__wrapper {
+  position: absolute;
+  top: 185px;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none ;
+}
+.ellipses-container {
+  width: 35rem;
+  height: 35rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 10rem;
+}
+@media only screen and (max-width: 970px) {
+  .content__wrapper {
+    top: 180px;
+  }
+  .ellipses-container { 
+    width: 27rem;
+    height: 27rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  .content__wrapper {
+    top: 180px;
+  }
+  .ellipses-container { 
+    width: 22rem;
+    height: 22rem;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .content__wrapper {
+    top: 240px;
+  }
+  .ellipses-container { 
+    width: 22rem;
+    height: 22rem;
+  }
+}
+@media only screen and (max-width: 503px) {
+  .content__wrapper {
+    top: 310px;
+  }
+  .ellipses-container { 
+    width: 16rem;
+    height: 16rem;
+  }
+}
+@media only screen and (max-width: 423px) {
+  .content__wrapper {
+    top: 300px;
+  }
+  .ellipses-container { 
+    width: 13rem;
+    height: 13rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .content__wrapper {
+    top: 380px;
+  }
+  .ellipses-container { 
+    width: 11rem;
+    height: 11rem;
+  }
+}
+.ellipses {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  border-style: solid;
+}
+
+.ellipses__outer--thin {
+  width: 100%;
+  height: 100%;
+  border-width: 1px;
+  border-color: rgba(9, 56, 62, 0.1);
+  animation: ellipsesOrbit 15s ease-in-out infinite;
+
+  &:after {
+    content: "";
+    background-image: url("https://s29.postimg.org/5h0r4ftkn/ellipses_dial.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    opacity: 0.15;
+  }
+}
+
+.ellipses__outer--thick {
+  width: 100%;
+  height: 100%;
+  border-color: #0469b9 transparent;
+  border-width: 2px;
+  transform: rotate(-45deg);
+  animation: ellipsesRotate 15s ease-in-out infinite;
+}
+@keyframes ellipsesRotate {
+  0% {
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: rotate(-405deg);
+  }
+}
+
+@keyframes ellipsesOrbit {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
