@@ -13,7 +13,7 @@
         <div class="right">
           <div class="nav-desktop">
             <router-link to="/" class="active">Home</router-link>
-            <a href="#">Creator program</a>
+            <router-link to="/creative" exact-active-class="active">Creator program</a>
             <a href="https://web.facebook.com/Busble/" target="bank">Feedback</a>
             <div
               class="nav-icon open"
@@ -45,6 +45,7 @@
 
 <script>
 export default {
+  name: 'navigation',
   data: function() {
     return {
       isActive: false

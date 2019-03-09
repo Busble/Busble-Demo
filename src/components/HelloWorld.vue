@@ -13,9 +13,11 @@
         </div>
         <div class="call-to-action">
           <router-link to="/register" class="button primary">
-            <div @click="trackBooking">สมัครใช้งานฟรี</div>
+            <div @click="trackRegisterGeneral">สมัครใช้งานฟรี</div>
           </router-link>
-          <div class="button">ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
+          <router-link to="/creative" class="button">
+            <div>ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
+          </router-link>
         </div>
         <div class="content__wrapper">
           <div class="ellipses-container">
@@ -69,7 +71,6 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
 export default {
   name: "hellowold",
   data() {
@@ -78,14 +79,16 @@ export default {
     }
   },
   computed: {
-    ...mapGetters([
-      'counter'
-    ])
+    // 
   },
   methods: {
-    ...mapActions([
-      'trackBooking'
-    ])
+    trackRegisterGeneral() {
+        this.$ga.event({
+            eventCategory: 'register',
+            eventAction: 'general-user',
+            eventLabel: 'general-clicked'
+        })
+    }
   }
 };
 </script>
