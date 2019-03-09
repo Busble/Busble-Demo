@@ -10,7 +10,7 @@
     <form @submit.prevent="submit">
       <div :class="{error: errors.first('email') || submit_null}" v-if="errors.first('email') || submit_null">* กรุณาใส่เฉพาะอีเมลเท่านั้น</div>
       <input v-validate="'required|email'" :class="{'error-input': errors.first('email')}" placeholder="อีเมลล์ของคุณ" data-vv-delay="500" name="email" type="text" v-model="text_email">
-      <button class="button primary" type="submit" :class="{'disable-button': errors.first('email')}" :disabled="errors.first('email')">submit</button>
+      <button class="button primary" type="submit" :class="{'disable-button': errors.first('email')}" :disabled="errors.first('email')">รับอีเมล์แจ้งเตือน</button>
     </form>
   </div>
 </template>
