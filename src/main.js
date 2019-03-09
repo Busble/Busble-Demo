@@ -4,6 +4,9 @@ import router from './router'
 import VueAnalytics from 'vue-analytics'
 import store from './store'
 import VeeValidate from 'vee-validate'
+import Parser from 'ua-parser-js'
+
+window.UaParser = new Parser()
 
 Vue.config.productionTip = false
 
