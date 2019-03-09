@@ -47,8 +47,8 @@ export default {
           newUserRef.set({
             email: this.text_email
           })
-          alert('registered')
-          this.text_email = ''
+          this.text_email = '';
+          this.$router.push({ path : '/thank' });
           return
         }
       });
