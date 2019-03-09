@@ -16,8 +16,8 @@ export default {
   methods: {
     trackUserAgent() {
         let userAgent = navigator.userAgent
-        UaParser.setUA(userAgent)
-        let result = UaParser.getResult()
+        window.UaParser.setUA(userAgent)
+        let result = window.UaParser.getResult()
         let os = result.os.name
         if (typeof os === 'string') {
             this.$ga.event({
