@@ -83,10 +83,11 @@ export default {
   },
   methods: {
     trackRegisterGeneral() {
-      this.$ga.event({
-        eventCategory: 'register',
-        eventAction: 'general-user'
-      })
+        this.$ga.event({
+            eventCategory: 'register',
+            eventAction: 'general-user',
+            eventLabel: 'general-clicked'
+        })
     }
   }
 };

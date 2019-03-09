@@ -18,16 +18,18 @@ export default {
     name: 'Creative',
     methods: {
         trackRegisterCretive() {
-        this.$ga.event({
-            eventCategory: 'register',
-            eventAction: 'pro-user'
-        })
+            this.$ga.event({
+                eventCategory: 'register',
+                eventAction: 'pro-user',
+                eventLabel: 'pro-clicked'
+            })
         },
         trackRegisterGeneral() {
             this.$ga.event({
-            eventCategory: 'register',
-            eventAction: 'general-user'
-        })
+                eventCategory: 'register',
+                eventAction: 'general-user',
+                eventLabel: 'general-clicked'
+            })
         }
     }
 }
