@@ -1,0 +1,61 @@
+[debug] [2019-03-10T22:47:49.106Z] ----------------------------------------------------------------------
+[debug] [2019-03-10T22:47:49.108Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-03-10T22:47:49.108Z] CLI Version:   6.4.0
+[debug] [2019-03-10T22:47:49.109Z] Platform:      darwin
+[debug] [2019-03-10T22:47:49.109Z] Node Version:  v11.1.0
+[debug] [2019-03-10T22:47:49.113Z] Time:          Mon Mar 11 2019 05:47:49 GMT+0700 (Indochina Time)
+[debug] [2019-03-10T22:47:49.113Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-03-10T22:47:49.126Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-03-10T22:47:49.127Z] > authorizing via signed-in user
+[debug] [2019-03-10T22:47:49.127Z] [iam] checking project busble for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-03-10T22:47:49.129Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/busble:testIamPermissions  
+
+[debug] [2019-03-10T22:47:50.691Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-10T22:47:50.693Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/busble  
+ 
+[debug] [2019-03-10T22:47:51.905Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'busble'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-03-10T22:47:51.909Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/busble/versions  
+
+[debug] [2019-03-10T22:47:54.062Z] <<< HTTP RESPONSE 200
+[info] i  hosting[busble]: beginning deploy...
+[info] i  hosting[busble]: found 33 files in ./dist
+[debug] [2019-03-10T22:47:54.076Z] [hosting] hash cache [ZGlzdA] load error: lines is not defined
+[debug] [2019-03-10T22:47:54.299Z] [hosting] hash cache [ZGlzdA] stored for 33 files
+[debug] [2019-03-10T22:47:54.300Z] [hosting][hash queue][FINAL]
+[debug] [2019-03-10T22:47:54.300Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/busble/versions/8002e200c77461d0:populateFiles  
+ <request body omitted>
+[debug] [2019-03-10T22:47:57.133Z] <<< HTTP RESPONSE 200
+[debug] [2019-03-10T22:47:57.136Z] [hosting][populate queue][FINAL]
+[debug] [2019-03-10T22:47:57.136Z] [hosting] uploads queued: 1
+[debug] [2019-03-10T22:48:01.255Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[busble]: file upload complete
+[debug] [2019-03-10T22:48:01.256Z] [hosting] deploy completed after 7192ms
+[debug] [2019-03-10T22:48:01.557Z] [
+  {
+    "config": {
+      "public": "./dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "busble"
+    },
+    "site": "busble",
+    "version": "sites/busble/versions/8002e200c77461d0"
+  }
+]
+[info] i  hosting[busble]: finalizing version...
+[debug] [2019-03-10T22:48:01.558Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/busble/versions/8002e200c77461d0?updateMask=status  
+
