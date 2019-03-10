@@ -31,11 +31,11 @@
         </div>
       </div>
     </header>
-    <div class="section-format">
+    <div class="section section-format">
       <img class="top" src="./../assets/img/home/section/section02-top.svg" alt>
       <div class="company">
-        <img class="" src="./../assets/img/home/section/format/microsoft-logo.svg" alt>
-        <img class="" src="./../assets/img/home/section/format/hubspot-logo.svg" alt>
+        <img class src="./../assets/img/home/section/format/microsoft-logo.svg" alt>
+        <img class src="./../assets/img/home/section/format/hubspot-logo.svg" alt>
       </div>
       <div class="content">
         <div class="title wrap">พื้นที่สำหรับซื้อขายและแบ่งปันผลงาน</div>
@@ -65,7 +65,23 @@
       </div>
       <img class="bottom" src="./../assets/img/home/section/section02-bottom.svg" alt>
     </div>
-    <div class="section-03"></div>
+    <div class="section section-portfolio">
+      <div class="content">
+        <img class="portfolio" src="./../assets/img/home/section/portfolio.png" alt>
+        <div class="title wrap">สร้าง Portfolio ของคุณให้โดดเด่นอยู่เสมอ</div>
+        <div
+          class="tagline wrap"
+        >คุณสามารถออกแบบ Portfolio ของให้น่าสนใจได้ง่าย ๆ ผ่านปลายนิ้ว ในไม่กี่ขั้นตอน</div>
+        <div class="call-to-action">
+          <router-link to="/register" class="button primary">
+            <div @click="trackRegisterGeneral">สมัครใช้งานฟรี</div>
+          </router-link>
+          <router-link to="/creative" class="button">
+            <div>ลงทะเบียนเป็นครีเอเตอร์มือโปร</div>
+          </router-link>
+        </div>
+      </div>
+    </div>
     <div class="footer"></div>
   </div>
 </template>
@@ -75,19 +91,19 @@ export default {
   name: "hellowold",
   data() {
     return {
-      // 
-    }
+      //
+    };
   },
   computed: {
-    // 
+    //
   },
   methods: {
     trackRegisterGeneral() {
-        this.$ga.event({
-            eventCategory: 'register',
-            eventAction: 'general-user',
-            eventLabel: 'general-clicked'
-        })
+      this.$ga.event({
+        eventCategory: "register",
+        eventAction: "general-user",
+        eventLabel: "general-clicked"
+      });
     }
   }
 };
@@ -186,6 +202,32 @@ header {
     }
   }
 }
+.section {
+  .content {
+    text-align: center;
+    height: auto;
+    padding: 80px 20px;
+    .title {
+      position: relative;
+      font-size: 35px;
+      line-height: 45px;
+      font-weight: bold;
+      margin: 10px auto;
+      padding: 0 20px;
+      color: #333333;
+    }
+    .tagline {
+      position: relative;
+      line-height: 25px;
+      font-size: 20px;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: #7b868a;
+    }
+  }
+}
 .section-format {
   position: relative;
   height: auto;
@@ -211,28 +253,6 @@ header {
     }
   }
   .content {
-    text-align: center;
-    height: auto;
-    padding: 80px 20px;
-    .title {
-      position: relative;
-      font-size: 35px;
-      line-height: 45px;
-      font-weight: bold;
-      margin: 10px auto;
-      padding: 0 20px;
-      color: #333333;
-    }
-    .tagline {
-      position: relative;
-      line-height: 25px;
-      font-size: 20px;
-      margin-top: 15px;
-      margin-bottom: 10px;
-      padding-left: 20px;
-      padding-right: 20px;
-      color: #7b868a;
-    }
     .format {
       padding-top: 30px;
       .item {
@@ -263,11 +283,49 @@ header {
     }
   }
 }
-.section-03 {
-  height: 1800px;
+.section-portfolio {
+  height: auto;
+  .content {
+    padding-top: 20px;
+    .portfolio {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .call-to-action {
+      position: relative;
+      padding: 10px;
+      .button {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px 24px;
+        margin: 10px;
+        border: 1px solid #e9eff5;
+        border-radius: 3px;
+        color: #333;
+        background-color: #fff;
+        transition: all 0.2s ease;
+        box-shadow: 0 5px 15px rgba(32, 43, 54, 0.05);
+        &.primary {
+          border: 1px solid #0469b9;
+          color: #fff;
+          background-color: #0469b9;
+        }
+        &:hover {
+          box-shadow: 0 5px 15px rgba(32, 43, 54, 0.1);
+        }
+      }
+    }
+  }
 }
 .footer {
-  height: 400px;
+  height: 80px;
   background-color: #272c34;
 }
 
@@ -321,7 +379,7 @@ $white: #fff;
   right: 0;
   left: 0;
   z-index: 0;
-  pointer-events: none ;
+  pointer-events: none;
 }
 .ellipses-container {
   width: 35rem;
@@ -335,7 +393,7 @@ $white: #fff;
   .content__wrapper {
     top: 180px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 27rem;
     height: 27rem;
   }
@@ -344,7 +402,7 @@ $white: #fff;
   .content__wrapper {
     top: 180px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 22rem;
     height: 22rem;
   }
@@ -353,7 +411,7 @@ $white: #fff;
   .content__wrapper {
     top: 240px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 22rem;
     height: 22rem;
   }
@@ -362,7 +420,7 @@ $white: #fff;
   .content__wrapper {
     top: 310px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 16rem;
     height: 16rem;
   }
@@ -371,7 +429,7 @@ $white: #fff;
   .content__wrapper {
     top: 300px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 13rem;
     height: 13rem;
   }
@@ -380,7 +438,7 @@ $white: #fff;
   .content__wrapper {
     top: 380px;
   }
-  .ellipses-container { 
+  .ellipses-container {
     width: 11rem;
     height: 11rem;
   }

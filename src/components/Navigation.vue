@@ -7,14 +7,13 @@
             <div class="img">
               <img src="./../assets/img/logo.png" alt>
             </div>
-            <router-link to="/" class="text">Project Busble</router-link>
+            <router-link to="/" class="text">Busble</router-link>
           </div>
         </div>
         <div class="right">
           <div class="nav-desktop">
-            <router-link to="/" exact-active-class="active">Home</router-link>
-            <router-link to="/creative" exact-active-class="active">Creator program</router-link>
-            <a href="https://web.facebook.com/Busble/" target="bank">Feedback</a>
+            <router-link to="/" exact-active-class="active">หน้าหลัก</router-link>
+            <router-link to="/creative" exact-active-class="active">ครีเอเตอร์</router-link>
             <div
               class="nav-icon open"
               v-bind:class="{ active: isActive }"
@@ -50,6 +49,18 @@ export default {
     return {
       isActive: false
     };
+  },
+  computed: {
+    // 
+  },
+  methods: {
+    trackRegisterGeneral() {
+        this.$ga.event({
+            eventCategory: 'register',
+            eventAction: 'general-user',
+            eventLabel: 'general-clicked'
+        })
+    }
   }
 };
 </script>
