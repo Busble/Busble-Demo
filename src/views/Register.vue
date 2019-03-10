@@ -5,7 +5,7 @@
     </div>
     <div class="content">
       <div class="title wrap">อุ๊ปส์ ดูเหมือนว่าคุณจะมาถึงก่อนที่เราสร้าง Busble ให้เสร็จ</div>
-      <div class="tagline wrap">กรุณาลงชื่ออีเมล์ของคุณไว้ หาก Busble พร้อมใช้งานเมื่อไหร่ เราจะรีบแจ้งให้คุณทราบในทันที</div>
+      <div class="tagline wrap">กรุณาลงชื่ออีเมล์ของคุณไว้ หาก Busble พร้อมใช้งาน เราจะรีบแจ้งให้คุณทราบในทันที</div>
     </div>
     <form @submit.prevent="submit">
       <div :class="{error: errors.first('email') || submit_null}" v-if="errors.first('email') || submit_null">* กรุณาใส่เฉพาะอีเมลเท่านั้น</div>
@@ -98,7 +98,7 @@ export default {
   }
   form {
     margin-top: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 10px;
     .error {
       text-align: left;
       margin-left: auto;

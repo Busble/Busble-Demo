@@ -71,7 +71,7 @@
         <div class="title wrap">สร้าง Portfolio ของคุณให้โดดเด่นอยู่เสมอ</div>
         <div
           class="tagline wrap"
-        >คุณสามารถออกแบบ Portfolio ของให้น่าสนใจได้ง่าย ๆ ผ่านปลายนิ้ว ในไม่กี่ขั้นตอน</div>
+        >คุณสามารถออกแบบ Portfolio ของคุณให้น่าสนใจได้ง่าย ๆ ผ่านปลายนิ้ว ในไม่กี่ขั้นตอน</div>
         <div class="call-to-action">
           <router-link to="/register" class="button primary">
             <div @click="trackRegisterGeneral">สมัครใช้งานฟรี</div>
@@ -82,7 +82,9 @@
         </div>
       </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+      www.busble.com
+    </div>
   </div>
 </template>
 
@@ -325,7 +327,10 @@ header {
   }
 }
 .footer {
-  height: 80px;
+  text-align: center;
+  height: auto;
+  padding: 30px;
+  color: #fff;
   background-color: #272c34;
 }
 

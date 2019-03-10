@@ -33,8 +33,12 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  
+.footer {
+  text-align: center;
+  height: auto;
+  padding: 30px;
+  color: #fff;
+  background-color: #272c34;
 }
 /* You can add global styles to this file, and also import other style files */
 

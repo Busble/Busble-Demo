@@ -4,9 +4,11 @@
       <div class="container">
         <div class="left">
           <div class="logo">
+            <router-link to="/">
             <div class="img">
               <img src="./../assets/img/logo.png" alt>
             </div>
+            </router-link>
             <router-link to="/" class="text">Busble</router-link>
           </div>
         </div>
@@ -35,9 +37,8 @@
     </div>
     <div class="app-navbar-zone"></div>
     <div class="nav-content" v-bind:class="{ active: isActive }">
-      <div class="item" v-on:click="isActive = !isActive">Home</div>
-      <div class="item" v-on:click="isActive = !isActive">Creator program</div>
-      <div class="item" href="#" v-on:click="isActive = !isActive">Feedback</div>
+      <div class="item" v-on:click="isActive = !isActive"><router-link to="/" exact-active-class="active">หน้าหลัก</router-link></div>
+      <div class="item" v-on:click="isActive = !isActive"><router-link to="/creative" exact-active-class="active">ครีเอเตอร์</router-link></div>
     </div>
   </div>
 </template>
@@ -169,7 +170,7 @@ export default {
   width: 100vw;
   height: 100vh;
   padding-top: 40px;
-  background-color: rgb(27, 30, 41);
+  background-color: #262d49;
   z-index: 10000;
   &.active {
     display: block;
@@ -182,9 +183,8 @@ export default {
     font-size: 26px;
     line-height: 50px;
     margin: 10px 10px;
-    color: #fff;
-    &.active {
-      color: #0469b9;
+    a {
+      color: #fff;
     }
   }
 }

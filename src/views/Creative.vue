@@ -2,16 +2,22 @@
   <div class="app-container">
     <div class="background">
       <div class="container">
+        <div class="header-content">
+          <div class="title wrap">อีกขั้นสู่การเป็นครีเอเตอร์มือโปร</div>
+          <div
+            class="tagline wrap"
+          >ทำลายทุกข้อจำกัด แล้วเพลิดเพลินไปกับจินตนาการของคุณ</div>
+        </div>
         <div class="panel pricing-table">
           <div class="pricing-plan">
             <img src="./../assets/img/pricing/paper-plane.png" alt class="pricing-img">
             <h2 class="pricing-header">ส่วนบุคคล</h2>
             <ul class="pricing-features">
-              <li class="pricing-features-item">Portfolio</li>
+              <li class="pricing-features-item">Portfolio ส่วนตัว</li>
               <li class="pricing-features-item">แชร์ผลงานได้ไม่จำกัด</li>
               <li class="pricing-features-item">ขายผลงาน 3 ชิ้นต่อเดือน</li>
             </ul>
-            <span class="pricing-price">ฟรีไม่จำกัด</span>
+            <span class="pricing-price"></span>
             <button
               href="#/"
               class="pricing-button"
@@ -24,10 +30,12 @@
             <img src="./../assets/img/pricing/plane.png" alt class="pricing-img">
             <h2 class="pricing-header">ครีเอเตอร์</h2>
             <ul class="pricing-features">
-              <li class="pricing-features-item">Portfolio (ปรับแต่งได้)</li>
+              <li class="pricing-features-item">Portfolio ส่วนตัว
+                <br>(ปรับแต่งได้)
+              </li>
               <li class="pricing-features-item">แชร์ผลงานได้ไม่จำกัด</li>
               <li class="pricing-features-item">ขายผลงานได้ไม่จำกัด</li>
-              <li class="pricing-features-item">direct message</li>
+              <li class="pricing-features-item">Direct Message</li>
               <li class="pricing-features-item">และอื่น ๆ อีกมากมาย</li>
             </ul>
             <span class="pricing-price">129 บาท/เดือน</span>
@@ -43,7 +51,7 @@
             <img src="./../assets/img/pricing/space-ship.png" alt class="pricing-img">
             <h2 class="pricing-header">ทีม</h2>
             <ul class="pricing-features">
-              <li class="pricing-features-item">ทุกอย่างที่ ครีเอเตอร์ ทำได้</li>
+              <li class="pricing-features-item">ทุกอย่างที่ ครีเอเตอร์ สามารถทำได้</li>
               <li class="pricing-features-item">แชร์และขายผลงานเป็นทีม</li>
             </ul>
             <span class="pricing-price">เร็ว ๆ นี้</span>
@@ -62,9 +70,9 @@ export default {
       this.$ga.event({
         eventCategory: "register",
         eventAction: "pro-user",
-        eventLabel: "pro-clicked",
+        eventLabel: "pro-clicked"
       });
-      this.$router.push({ path: '/register' });
+      this.$router.push({ path: "/register" });
     },
     trackRegisterGeneral() {
       this.$ga.event({
@@ -72,21 +80,38 @@ export default {
         eventAction: "general-user",
         eventLabel: "general-clicked"
       });
-      this.$router.push({ path: '/register' });
+      this.$router.push({ path: "/register" });
     }
   }
 };
 </script>
 <style lang="scss" scoped>
-html {
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+.header-content {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 20px 0 30px 0;
+  z-index: 1000;
+  .title {
+    position: relative;
+    font-size: 45px;
+    line-height: 55px;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 0 20px;
+    color: #fff;
+  }
+  .tagline {
+    position: relative;
+    font-size: 20px;
+    line-height: 25px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #F5F7F8;
+  }
 }
 
 .background {
@@ -147,7 +172,6 @@ html {
 
 .pricing-table * {
   text-align: center;
-  text-transform: uppercase;
 }
 
 .pricing-plan {
@@ -164,7 +188,7 @@ html {
     border-bottom: none;
     border-right: 1px solid #e1f1ff;
     flex-basis: 100%;
-    padding: 25px 50px;
+    padding: 25px 40px;
   }
 
   .pricing-plan:last-child {
