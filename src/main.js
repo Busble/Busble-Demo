@@ -13,7 +13,7 @@ Vue.config.productionTip = false
 const isProduction = process.env.NODE_ENV === 'production'
 
 Vue.use(VueAnalytics, {
-  id: 'UA-135760441-1',
+  id: 'UA-136034582-1',
   router,
   autoTracking: {
     exception: true
