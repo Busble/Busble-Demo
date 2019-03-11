@@ -72,7 +72,7 @@ export default {
         eventAction: "pro-user",
         eventLabel: "pro-clicked"
       });
-      this.$router.push({ path: "/register" });
+      this.$router.push({ path: "/registers" });
     },
     trackRegisterGeneral() {
       this.$ga.event({
