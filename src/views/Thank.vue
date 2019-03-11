@@ -10,13 +10,23 @@
       >เตรียมความคิดสร้างสรรค์ไว้ เมื่อ Busble พร้อมใช้งาน คุณจะเป็นคนแรกที่เราคิดถึง</div>
     </div>
     <a href="https://web.facebook.com/Busble/" class="button primary">
-      <div @click="trackRegisterGeneral">ติดตามความเคลื่อนไหวบน Facebook</div>
+      <div @click="trackVisitorToFacebook">ติดตามความเคลื่อนไหวบน Facebook</div>
     </a>
   </div>
 </template>
 <script>
 export default {
-  name: "thank"
+  name: "thank",
+  methods: {
+    trackVisitorToFacebook() {
+      this.$ga.event({
+        eventCategory: "register",
+        eventAction: "user-to-facebook",
+        eventLabel: "facebook-clicked",
+        eventValue: 1
+      })
+    }
+  }
 };
 </script>
 
