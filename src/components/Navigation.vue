@@ -16,6 +16,7 @@
           <div class="nav-desktop">
             <router-link to="/" exact-active-class="active">หน้าหลัก</router-link>
             <router-link to="/creative" exact-active-class="active">ครีเอเตอร์</router-link>
+            <a href="https://web.facebook.com/Busble/" target="bank">เกี่ยวกับเรา</a>
             <div
               class="nav-icon open"
               v-bind:class="{ active: isActive }"
@@ -39,6 +40,7 @@
     <div class="nav-content" v-bind:class="{ active: isActive }">
       <div class="item" v-on:click="isActive = !isActive"><router-link to="/" exact-active-class="active">หน้าหลัก</router-link></div>
       <div class="item" v-on:click="isActive = !isActive"><router-link to="/creative" exact-active-class="active">ครีเอเตอร์</router-link></div>
+      <div class="item"><a href="https://web.facebook.com/Busble/" target="bank">เกี่ยวกับเรา</a></div>
     </div>
   </div>
 </template>
