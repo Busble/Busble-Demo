@@ -16,20 +16,6 @@
 </template>
 <script>
 
-import firebase from 'firebase/app'
-import 'firebase/database'
-
-const config = {
-  apiKey: "AIzaSyBwwtOj08xrVVhT5yhUHacor8Tn292jq-Q",
-  authDomain: "busble.firebaseapp.com",
-  databaseURL: "https://busble.firebaseio.com",
-  projectId: "busble",
-  storageBucket: "busble.appspot.com",
-  messagingSenderId: "914645978067"
-}
-
-firebase.initializeApp(config)
-
 export default {
   name: "register",
   data() {
@@ -42,19 +28,19 @@ export default {
     submit() {
       this.$validator.validateAll().then((passed) => {
         if (passed) {
-          const userListRef = firebase.database().ref('/user')
+          const userListRef = Firebase.database().ref('/user')
           let newUserRef = userListRef.push()
           newUserRef.set({
             email: this.text_email
           })
           this.text_email = '';
-          this.$router.push({ path : '/thank' });
+          this.$router.push({ path : '/thank' })
           return
         }
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
